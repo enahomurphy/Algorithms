@@ -10,26 +10,40 @@
 
 class Anagram
   
-      def initialize(test)
-            @test = test
-      end
-                
-                
-      def matches(*args)
-            if args.length  == 0
-                  return []
-            end
+    def initialize(string)
+        @string = string
+    end
+    
+    #returns the count of each letters in a string
+    #eg letter_frequency("apple") = {a: 1, p: 2, l:1 e: 1}
+    #
+    #
+    #@params string
+    #@return {dict}
+    
+    def letter_frequency(string)
+        frequency = Hash.new()
+        string.downcase.split('').each {|e| frequency.has_key?(e)? frequency[e] += 1 : frequency[e] =1 }
+        
+        return frequency
+    end
+    
+    #takes in unknown numbers of string parameters and returns
+    #an array of anagrams
+    #
+    #@params {string}
+    #@return [Array]
+    def matches(*args)
+        ans = []
+        args.each do  |word|
+            ans.push(word) if letter_frequency(word) == letter_frequency(@string) && word.downcase != @string.downcase
+        end
+	
+        return ans
+    end
 
-            for words in args
-                  words
-            end
-            
-            
-      end
-  
-  
 end
+anagram =  Anagram.new("Orchestra");
 
-anagram =  Anagram.new("hello world");
+print anagram.matches('cashregister', 'Carthorse', 'radishes');
 
-puts anagram.matches("enlists", "google", "inlets" , "banana" );

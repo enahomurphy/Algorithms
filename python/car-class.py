@@ -6,8 +6,19 @@
 # Let the test guide you to building your Car boiler-plate.
 # Test Results
 
-class car(object):
+class Car(object):
     """docstring for car."""
     
-    def __init__(self, arg):
-        self.arg = arg
+    def __init__(self, name="General", model="GM", vehicle=None):
+        self.name = name
+        self.model = model
+        self.vehicle = vehicle
+        self.num_of_wheels = self.name in ["Opel", "Koenigsegg"] ? 2 : 4
+
+  
+
+
+
+car = Car("Opel")
+
+print car.num_of_wheels

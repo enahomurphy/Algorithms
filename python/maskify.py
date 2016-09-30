@@ -26,6 +26,9 @@ def maskify(cc):
 	return "".join(slipted_cc)
 
 
+def maskify_simple(cc):
+	return (len(cc) - 4) * "#" + cc[len(cc) - 4 : ]
 
-
-print maskify("36560#3700") 
+print maskify_simple("3656093700") 
+print maskify("64607935616")
+print maskify_simple("64607935616")

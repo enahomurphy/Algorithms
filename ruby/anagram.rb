@@ -22,8 +22,8 @@ class Anagram
     #@return {dict}
     
     def letter_frequency(string)
-        frequency = Hash.new()
-        string.downcase.split('').each {|e| frequency.has_key?(e)? frequency[e] += 1 : frequency[e] =1 }
+        frequency = Hash.new
+        string.downcase.split('').each {|e| frequency.has_key?(e) ? frequency[e] += 1 : frequency[e] =1 }
         
         return frequency
     end

@@ -26,6 +26,7 @@ def unique_in_order(iterable):
 		count +=1
 	return unique
 
+
 def unique_in_order_simplified(iterable):
 	from itertools import groupby
 	return [x for (x, _) in groupby(iterable)]
@@ -37,5 +38,6 @@ def unique_in_order_simplified(iterable):
 print unique_in_order_simplified('AAAABBBCCDAABBB') 
 print unique_in_order('ABBCcAD')         
 print unique_in_order([1,2,2,3,3])    
-print unique_in_order_simplified(["A", "A"])    
+print unique_in_order_simplified(["A", "A"])  
+print unique_in_order([None, None, None, 1, 1, 1, 2, 2, 2, 3, 3, 3])  
 

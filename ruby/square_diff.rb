@@ -38,6 +38,21 @@ class Squares
 end
 
 
-s = Squares.new(5).difference
+def prime(n)
 
-puts s
+	
+	if (n < 2 ) || (n % 2 == 0)
+		return false
+	end
+	count = 3
+	while count < n
+		if n % count == 3
+			return false
+		end
+		count += 3
+	end
+	
+	return true
+end
+
+puts prime(22)

@@ -35,4 +35,4 @@ def dataTypes(val)
 
 end
 
-print dataTypes(true)
+print dataTypes(33).toJson()

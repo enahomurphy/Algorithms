@@ -18,29 +18,12 @@ def aritGeo(arr):
     geo = arr[1] / arr[0]
     
     while count <= lenght:
-<<<<<<< HEAD
-        # print count
-        current = count + 1
-        if arr[count] == arr[-1]:
-            break
-        
-        if arr[current] - arr[i] == 6:
-            ans = "Arithmetic"
-            print "ari"
-            
-        elif (arr[current] / arr[i]) == 3:
-            ans =  "Geometric"
-            print "geo"
-        else:
-            ans = -1
-=======
         pos = count + 1
         if arr[count] == arr[-1]: break
 
         if (arr[pos] - arr[count]) == ari: ans = "Arithmetic"
         elif (arr[pos] / arr[count]) == geo:  ans =  "Geometric"
         else: ans = -1
->>>>>>> e50c2fc86a795e72aa752a6c0afa44a1a0523fcc
         count +=1
     return ans
         
